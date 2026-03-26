@@ -4,6 +4,9 @@ on:
   push:
     branches: [ main ]
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 jobs:
   cypress-run:
     runs-on: ubuntu-latest
@@ -16,6 +19,7 @@ jobs:
         uses: cypress-io/github-action@v6
         with:
           record: true
+          spec: cypress/e2e/**/*.cy.js
         env:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
 
