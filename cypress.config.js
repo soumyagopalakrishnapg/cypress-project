@@ -1,8 +1,9 @@
 const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
-  reporter: "mochawesome",
+  projectId: "yffsfq",   // ✅ comma added
 
+  reporter: "mochawesome",
   reporterOptions: {
     reportDir: "cypress/reports",
     overwrite: false,
@@ -11,8 +12,6 @@ module.exports = defineConfig({
   },
 
   e2e: {
-    setupNodeEvents(on, config) {
-      // implement node event listeners here
-    },
+    setupNodeEvents(on, config) {},
   },
 });
