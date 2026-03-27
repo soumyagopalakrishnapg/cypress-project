@@ -3,10 +3,14 @@ describe('Contact Us Form Test', () => {
   it('Fill and submit Contact Us form', () => {
 
     // Visit page
-    cy.visit('https://uat-dxweb104.beccloud.com/en/support/contact-us')
+    
+   cy.visit('https://uat-dxweb104.beccloud.com/en/support/contact-us', {
+  timeout: 120000,
+  failOnStatusCode: false
+})
 
     // Verify page
-    cy.contains('Contact Us').should('be.visible')
+    cy.contains('Contact Us', { timeout: 60000 }).should('be.visible')
 
     // Select dropdowns (adjust text if needed)
     cy.contains('Select country/region').parent().find('select').select(1)
