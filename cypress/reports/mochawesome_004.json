@@ -1,0 +1,109 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2026-03-27T11:57:49.513Z",
+    "end": "2026-03-27T11:58:02.259Z",
+    "duration": 12746,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "78460740-467c-4644-91da-e3d29ffbbf34",
+      "title": "",
+      "fullFile": "cypress\\e2e\\contactUs.cy.js",
+      "file": "cypress\\e2e\\contactUs.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "ffdda866-af06-4c65-80e7-92c117893f26",
+          "title": "Contact Us Form Test",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Fill and submit Contact Us form",
+              "fullTitle": "Contact Us Form Test Fill and submit Contact Us form",
+              "timedOut": null,
+              "duration": 9321,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "// Visit page\ncy.visit('https://uat-dxweb104.beccloud.com/en/support/contact-us', {\n  timeout: 120000,\n  failOnStatusCode: false\n});\n// Verify page\ncy.contains('Contact Us', {\n  timeout: 60000\n}).should('be.visible');\n// Select dropdowns (adjust text if needed)\ncy.contains('Select country/region').parent().find('select').select(1);\ncy.get('select').eq(1).select(1); // Request More Information\ncy.get('select').eq(2).select(1); // Inquiry Category\ncy.get('select').eq(3).select(1); // Sub-category\n// Fill text fields\ncy.get('input').eq(0).type('Test User'); // First Name\ncy.get('input').eq(1).type('User'); // Last Name\ncy.get('input').eq(2).type('testuser@gmail.com'); // Email\ncy.get('input').eq(3).type('1234567890'); // Phone\ncy.get('input').eq(4).type('Test Company'); // Company\ncy.get('input').eq(5).type('Tester'); // Department/Role\n// Job Title dropdown\ncy.get('select').last().select(1);\n// Comments\ncy.get('textarea').type('This is a Cypress automation test message');\n// Select consent radio button\ncy.contains('I Consent').click();\n// Click Send Request - From here it is commented\n//cy.contains('Send Request')\n//  .should('be.visible')\n//  .click()\n// Validation (update based on actual behavior)\n// cy.contains('Thank').should('be.visible')\n// OR\n// cy.url().should('include', 'success')",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `select`, but never found it. Queried from:\n\n              > cy.contains(Select country/region).parent()",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `select`, but never found it. Queried from:\n\n              > cy.contains(Select country/region).parent()\n    at Context.eval (webpack://cypress-project/./cypress/e2e/contactUs.cy.js:16:50)",
+                "diff": null
+              },
+              "uuid": "75068824-cced-47b4-a9d7-31b1c8f18ac4",
+              "parentUUID": "ffdda866-af06-4c65-80e7-92c117893f26",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "75068824-cced-47b4-a9d7-31b1c8f18ac4"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 9321,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}
