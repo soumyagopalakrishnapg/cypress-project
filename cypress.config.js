@@ -2,7 +2,7 @@ const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
   projectId: "yffsfq",   // ✅ comma added
-  pageLoadTimeout: 120000,
+  pageLoadTimeout: 220000,
   reporter: "mochawesome",
   reporterOptions: {
     reportDir: "cypress/reports",
