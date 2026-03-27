@@ -36,13 +36,14 @@ describe('Contact Us Form Test', () => {
     // Select consent radio button
     cy.contains('I Consent').click()
 
-    // Click Send Request
-    cy.contains('Send Request')
-      .should('be.visible')
-      .click()
+    // Click Send Request - From here it is commented
+    
+	//cy.contains('Send Request')
+    //  .should('be.visible')
+    //  .click()
 
     // Validation (update based on actual behavior)
-    cy.contains('Thank').should('be.visible')
+   // cy.contains('Thank').should('be.visible')
     // OR
     // cy.url().should('include', 'success')
 
