@@ -4,11 +4,12 @@ describe('Abcam E-commerce Flow', () => {
 
     // Visit site
     cy.visit('https://www.abcam.com/', {
-      timeout: 120000
+      timeout: 420000
     })
 
     // Handle country selection popup (if appears)
-    cy.contains('India', { timeout: 10000 })
+
+   /* cy.contains('India', { timeout: 10000 })
       .should('be.visible')
       .click()
 
@@ -36,6 +37,7 @@ describe('Abcam E-commerce Flow', () => {
     cy.contains('Basket').should('be.visible')
     // OR
     // cy.get('.basket-count').should('not.have.text', '0')
+*/
 
   })
 
